@@ -20,6 +20,9 @@ namespace Videos.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        // Customer Table in database
+        public DbSet<Customer> Customers { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
