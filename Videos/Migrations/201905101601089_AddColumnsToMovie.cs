@@ -18,7 +18,7 @@ namespace Videos.Migrations
             
             AddColumn("dbo.Movies", "GenreId", c => c.Byte(nullable: false));
             AddColumn("dbo.Movies", "ReleaseDate", c => c.DateTime(nullable: false));
-            AddColumn("dbo.Movies", "DateAdded", c => c.DateTime(nullable: false));
+            AddColumn("dbo.Movies", "DateAdded", c => c.DateTime(nullable: true));
             AddColumn("dbo.Movies", "NumberInStock", c => c.Int(nullable: false));
             CreateIndex("dbo.Movies", "GenreId");
             AddForeignKey("dbo.Movies", "GenreId", "dbo.Genres", "Id", cascadeDelete: true);

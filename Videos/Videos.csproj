@@ -231,6 +231,38 @@
     <Compile Include="Migrations\201905101608006_PopulateMovies.Designer.cs">
       <DependentUpon>201905101608006_PopulateMovies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905102350201_AddGenres.cs" />
+    <Compile Include="Migrations\201905102350201_AddGenres.Designer.cs">
+      <DependentUpon>201905102350201_AddGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905110033277_AddDateNullable.cs" />
+    <Compile Include="Migrations\201905110033277_AddDateNullable.Designer.cs">
+      <DependentUpon>201905110033277_AddDateNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905110036265_AddColumnsToMovie1.cs" />
+    <Compile Include="Migrations\201905110036265_AddColumnsToMovie1.Designer.cs">
+      <DependentUpon>201905110036265_AddColumnsToMovie1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905110042576_RelDateNullable.cs" />
+    <Compile Include="Migrations\201905110042576_RelDateNullable.Designer.cs">
+      <DependentUpon>201905110042576_RelDateNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905110051224_RelDateNullable1.cs" />
+    <Compile Include="Migrations\201905110051224_RelDateNullable1.Designer.cs">
+      <DependentUpon>201905110051224_RelDateNullable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905110054584_AddDateNullable1.cs" />
+    <Compile Include="Migrations\201905110054584_AddDateNullable1.Designer.cs">
+      <DependentUpon>201905110054584_AddDateNullable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905110100523_AddDateRequired.cs" />
+    <Compile Include="Migrations\201905110100523_AddDateRequired.Designer.cs">
+      <DependentUpon>201905110100523_AddDateRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905110103010_RelDateRequired.cs" />
+    <Compile Include="Migrations\201905110103010_RelDateRequired.Designer.cs">
+      <DependentUpon>201905110103010_RelDateRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -241,6 +273,8 @@
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\MovieFormViewModel.cs" />
+    <Compile Include="ViewModels\NewCustomerViewModel.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -305,6 +339,8 @@
     <Content Include="Views\Movies\Random.cshtml" />
     <Content Include="Views\Shared\_Navbar.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Customers\CustomerForm.cshtml" />
+    <Content Include="Views\Movies\MovieForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -364,6 +400,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905101608006_PopulateMovies.resx">
       <DependentUpon>201905101608006_PopulateMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905102350201_AddGenres.resx">
+      <DependentUpon>201905102350201_AddGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905110033277_AddDateNullable.resx">
+      <DependentUpon>201905110033277_AddDateNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905110036265_AddColumnsToMovie1.resx">
+      <DependentUpon>201905110036265_AddColumnsToMovie1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905110042576_RelDateNullable.resx">
+      <DependentUpon>201905110042576_RelDateNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905110051224_RelDateNullable1.resx">
+      <DependentUpon>201905110051224_RelDateNullable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905110054584_AddDateNullable1.resx">
+      <DependentUpon>201905110054584_AddDateNullable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905110100523_AddDateRequired.resx">
+      <DependentUpon>201905110100523_AddDateRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905110103010_RelDateRequired.resx">
+      <DependentUpon>201905110103010_RelDateRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
