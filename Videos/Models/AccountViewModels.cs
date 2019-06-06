@@ -3,13 +3,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Videos.Models
 {
-    public class ExternalLoginConfirmationViewModel
-    {
-        [Required]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
-    }
-
     public class ExternalLoginListViewModel
     {
         public string ReturnUrl { get; set; }
@@ -67,6 +60,11 @@ namespace Videos.Models
         [Required]
         [Display(Name ="Driving License")]
         public string DrivingLicense { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string Phone { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

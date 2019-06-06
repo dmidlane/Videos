@@ -24,26 +24,7 @@ namespace Videos.Controllers
             _context.Dispose();
         }
 
-        
-
-        // GET: Movies/Random
-        public ActionResult Random()
-        {
-            var movie = new Movie() { Name = "Lion King" };
-            var customers = new List<Customer>
-            {
-                new Customer {Id = 1, Name = "Sally"},
-                new Customer {Id = 2, Name = "Harry"}
-            };
-
-            var viewModel = new RandomMovieViewModel
-            {
-                Movie = movie,
-                Customers = customers
-            };
-            return View(viewModel);
-        }
-
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
             var movie = _context.Movies.SingleOrDefault(m => m.Id == id);
@@ -95,6 +76,7 @@ namespace Videos.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Save(Movie movie)
         {
             if(!ModelState.IsValid)
