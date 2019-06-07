@@ -11,14 +11,14 @@
     <div class="form-group">
         <label>Customer</label>
         <div class="tt-container">
-            <input required type="text" id="customer" data-rule-validCustomer="true" class="form-control" />
+            <input required type="text" name="customer" id="customer" data-rule-validCustomer="true" class="form-control" />
         </div>
         
     </div>
     <div class="form-group">
         <label>Movie</label>
         <div class="tt-container">
-            <input type="text" id="movie" class="form-control" />
+            <input type="text" id="movie" name="movie" data-rule-atLeastOneMovie="true" class="form-control" />
         </div>
     </div>
 
@@ -89,21 +89,34 @@
                 return vm.customerId && vm.customerId !== 0;
             }, "Please select a valid customer.");
 
-            $("#newRental").validate({
-                submitHandler: function () {
-                    e.preventDefault();
+            $.validator.addMethod("atLeastOneMovie", function () {
+                return vm.movieIds.length > 0;
+            }, "Please select at least one movie.");
 
+            var validator = $("#newRental").validate({
+                submitHandler: function () {
                     $.ajax({
                         url: "/api/newRentals",
                         method: "post",
                         data: vm
                     })
-                        .done(function () {
-                            toastr.success("Rental added successfully!");
-                        })
-                        .fail(function () {
-                            toastr.error("An unexpected error occurred.");
-                        });
+                    .done(function () {
+                        toastr.success("Rental recorded successfully!");
+
+                        $("#Customer").typeahead("val", "");
+                        $("#Movie").typeahead("val", "");
+                        $("#Movies").empty();
+
+                        vm = { movieIds: [] };
+
+                        validator.resetForm();
+
+                    })
+                    .fail(function () {
+                        toastr.error("An unexpected error occurred.");
+                    });
+
+                    return false;
                 }
             });
 

@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using Videos.Models;
+using System.Configuration;
 
 namespace Videos
 {
@@ -55,8 +56,8 @@ namespace Videos
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "2331754313757717",
-               appSecret: "1deb5b8c1ca6af093b32817e888646b5");
+               appId: ConfigurationManager.AppSettings["FacebookAppId"],
+               appSecret: ConfigurationManager.AppSettings["FacebookAppSecret"]);
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
